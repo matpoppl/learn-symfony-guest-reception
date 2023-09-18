@@ -1,0 +1,43 @@
+{% extends 'layouts/root.html.twig' %}
+
+{% block root %}
+<form method="post">
+<table class="table-models">
+    <thead>
+        <tr>
+            <th>{% trans %}Users{% endtrans %}</th>
+            <th class="c-ico">{% trans %}Edit{% endtrans %}</th>
+            <th class="c-ico">{% trans %}Delete{% endtrans %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>
+                <a href="{{ path('user_edit', {id: user.getId()}) }}">
+                    <i class="material-icons">person</i>
+                    {{ user.getUsername() }}
+                </a>
+            </td>
+            <td class="c-ico">
+                <a href="{{ path('user_edit', {id: user.getId()}) }}" class="material-icons t-notice">
+                    edit
+                </a>
+            </td>
+            <td class="c-ico">
+                <button
+                    type="submit"
+                    name="id[]"
+                    value="{{ user.getId() }}"
+                    formaction="{{ path('user_del') }}"
+                    class="material-icons t-danger btn-rst">
+                    delete
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<input type="hidden" name="csrf" value="{{ csrf_token('delete') }}"/>
+</form>
+{% endblock %}

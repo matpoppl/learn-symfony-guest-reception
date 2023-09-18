@@ -1,0 +1,9 @@
+{% for label, messages in app.flashes(['success', 'error']) %}
+    {% if messages|length > 0 %}
+    <ul class="messages messages--{{ label }}">
+    {% for message in messages %}
+        <li>{{ message|trans }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+{% endfor %}

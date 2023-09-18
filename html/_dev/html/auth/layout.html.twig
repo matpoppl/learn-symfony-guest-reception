@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{% block title %}Welcome!{% endblock %}</title>
+
+<script src="http://127.0.0.1:35729/livereload.js"></script>
+
+<link href="/static/css/anon.css" rel="stylesheet">
+
+{% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+<main class="signin-main">
+    <div class="signin-main__main">
+    
+    {% include 'partials/app-flashes.html.twig' %}
+    
+	{% block layout %}{% endblock %}
+	
+	<p>
+		{% if 'signin' != app.request.get('_route') %}
+		  <a href="{{ path('signin') }}">&laquo; {% trans %}Sign in{% endtrans %}</a><br />
+		{% endif %}
+		
+        {% if 'register' != app.request.get('_route') %}
+	       <a href="{{ path('register') }}">{% trans %}Create account{% endtrans %}</a><br />
+        {% endif %}
+	    
+        {% if 'password_reset' != app.request.get('_route') %}
+	       <a href="{{ path('password_reset') }}">{% trans %}Reset password{% endtrans %}</a>
+        {% endif %}
+	</p>
+    </div>
+</main>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

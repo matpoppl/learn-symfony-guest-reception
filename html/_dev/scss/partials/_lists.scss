@@ -1,0 +1,22 @@
+
+.dd-menu {
+
+  ul {
+    display: block;
+    position: absolute;
+    transition: transform 0.2s, opacity 0.2s;
+    transform-origin: 0 0;
+    
+    box-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25);
+  }
+
+	li {
+	  position: relative;
+	  
+	  &:not(:hover) > ul {
+	    transform: scaleY(0) translateY(-100%);
+	    pointer-events: none;
+	    opacity: 0;
+	  }
+	}
+}

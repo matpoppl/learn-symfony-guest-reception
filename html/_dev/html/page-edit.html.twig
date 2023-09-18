@@ -1,0 +1,8 @@
+{% extends 'layouts/root.html.twig' %}
+{% form_theme form 'partials/form-theme/edit.html.twig' %}
+
+{% block root %}
+
+{{ form(form, { attr: { class: 'form form--edit' } }) }}
+
+{% endblock %}

@@ -1,0 +1,64 @@
+
+index:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: guests
+
+signin:
+    path: /auth/signin
+    controller: App\Controller\AuthController::signin
+
+signout:
+    path: /auth/signout
+    controller: App\Controller\AuthController::signout
+
+register:
+    path: /auth/register
+    controller: App\Controller\AuthController::register
+
+password_reset:
+    path: /auth/reset
+    controller: App\Controller\AuthController::passwordReset
+
+password_change:
+    path: /auth/change
+    controller: App\Controller\AuthController::passwordChange
+
+profile:
+    path: /profile
+    controller: App\Controller\UserController::profile
+
+users:
+    path: /users
+    controller: App\Controller\UserController::index
+
+user_edit:
+    path: /user/{id}
+    controller: App\Controller\UserController::edit
+    requirements:
+        id: \d+
+
+user_del:
+    path: /user/del
+    controller: App\Controller\UserController::delete
+
+guests:
+    path: /guests
+    controller: App\Controller\GuestController::index
+
+guest_add:
+    path: /guest/add
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        path: /guest/0
+
+guest_edit:
+    path: /guest/{id}
+    controller: App\Controller\GuestController::edit
+    requirements:
+        id: \d+
+
+guest_del:
+    path: /guest/del
+    controller: App\Controller\GuestController::delete

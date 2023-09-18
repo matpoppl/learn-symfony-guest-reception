@@ -1,0 +1,21 @@
+
+@import 'config';
+
+@import 'partials/reset';
+
+@import 'partials/text';
+@import 'partials/buttons';
+@import 'partials/lists';
+@import 'partials/form-elements';
+@import 'partials/alerts';
+@import 'partials/tables';
+@import 'partials/forms';
+
+@import 'main/body';
+@import 'main/header';
+@import 'main/footer';
+
+.material-icons {
+	vertical-align: text-bottom;
+	margin-right: 0.125em;
+}

@@ -1,0 +1,74 @@
+
+.form__select,
+.form__text {
+  border-radius: 0.25em;
+
+  &:focus {
+    box-shadow: 0 0 0 1px $color-primary;
+    border-color: $color-primary;
+  }
+  
+	.form__elem--error & {
+    box-shadow: 0 0 0 1px $color-danger;
+	}
+}
+
+.form__label--checkbox {
+  position: relative;
+  
+  user-select: none;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3em;
+    height: 1.5em;
+
+    border: 1px solid $color-border;
+    border-radius: 1em;
+
+    margin-right: 0.5em;
+    
+    vertical-align: middle;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 1em;
+    height: 1em;
+
+    border: 1px solid $color-border;
+    background: $color-border;
+    border-radius: 100%;
+    transform: translate(0.5em, 0.25em);
+    
+    transition: transform 0.2s;
+  }
+  
+  &:hover,
+  input:focus + & {
+	  &::before {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 1px $color-primary;
+	  }
+  }
+  
+  input:checked + & {
+    &::before {
+      background: $color-primary;
+      border-color: $color-primary;
+    }
+  
+	  &::after {
+      transform: translate(1.5em, 0.25em);
+      background: $white;
+      border-color: $white;
+	  }
+  }
+}

@@ -1,0 +1,32 @@
+
+.site-nav__menu {
+  @extend .dd-menu;
+  
+  a {
+    text-decoration: none;
+  }
+  
+  > li > span,
+  > li > a {
+    border-radius: 0.25em;
+    
+    &:hover,
+    &:focus {
+      background: $grey-dark;
+    }
+  }
+  ul {
+    width: 18em;
+    background: $grey-dark;
+    
+    a {
+      display: block;
+      padding: 0.5em 1em;
+      border-bottom: 1px solid lighten($grey-dark, 5%);
+      
+      &:hover {
+        background: darken($grey-dark, 5%);
+      }
+    }
+  }
+}

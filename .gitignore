@@ -1,0 +1,17 @@
+/.settings/
+/_tmp/
+/html/_dev/node_modules/
+/html/static/
+/html/app/bin/
+/html/app/var/cache/*
+/html/app/var/log/*
+/html/app/var/session/*
+/html/app/var/spool/*
+/html/app/vendor/
+/html/app/.env.local
+/html/app/.env.*.local
+/.buildpath
+/.project
+/*.log
+/*.dist.php
+/*.cache

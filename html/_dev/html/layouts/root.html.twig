@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{% block title %}Welcome!{% endblock %}</title>
+
+<script src="http://symfony.pop-pc.lan:35729/livereload.js"></script>
+
+<link href="/static/css/main-critical.css" rel="stylesheet">
+<link href="/static/ico/material-icons.css" rel="preload" as="style">
+<link href="/static/css/main.css" rel="preload" as="style">
+
+{% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+<nav class="site-nav">
+
+	<a href="{{ path('index') }}" class="site-nav__title">
+	  Recepcja (-/-)
+	</a>
+	
+	<ul class="site-nav__menu">
+		<li>
+			<a href="{{ path('guests') }}">
+			 <i class="material-icons">people</i>
+			Lista gości
+			</a>
+		</li>
+		<li>
+			<a href="{{ path('guest_add') }}">
+             <i class="material-icons">person_add</i>
+			Dodaj gościa
+			</a>
+		</li>
+		<li>
+			<span>
+	             <i class="material-icons">settings</i>
+				{{ app.user.username ?? 'Anonymous user' }}
+			</span>
+			<ul>
+                <li>
+                    <a href="{{ path('users') }}">
+                    <i class="material-icons">file_upload</i>
+                    import
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('users') }}">
+                    <i class="material-icons">file_download</i>
+                    export
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('users') }}">
+                    <i class="material-icons">whatshot</i>
+                    wyczyść
+                    </a>
+                </li>
+				<li>
+					<a href="{{ path('users') }}">
+                    <i class="material-icons">people</i>
+					{% trans %}Users{% endtrans %}
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('signout') }}">
+                    <i class="material-icons">close</i>
+					{% trans %}Sign out{% endtrans %}
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+
+
+</nav>
+
+{% include 'partials/app-flashes.html.twig' %}
+
+{% block root %}{% endblock %}
+
+
+<script src="/static/js/boot.js"></script>
+
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

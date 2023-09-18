@@ -1,0 +1,6 @@
+
+@each $name, $color in $colors {
+  .t-#{$name} {
+    color: $color;
+  }
+}

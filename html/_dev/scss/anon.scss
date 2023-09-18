@@ -1,0 +1,58 @@
+
+@import 'config';
+
+@import 'partials/critical/reset';
+@import 'partials/reset';
+
+@import 'main/critical/body';
+@import 'main/body';
+
+@import 'partials/critical/buttons';
+@import 'partials/critical/form-elements';
+@import 'partials/critical/alerts';
+@import 'partials/buttons';
+@import 'partials/form-elements';
+@import 'partials/alerts';
+
+
+.signin-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.form--signin {
+	width: 25em;
+	background: $white;
+	border: 1px solid lighten($color-border, 20%);
+	padding: 2em 1em;
+	
+	border-radius: 0.25em;
+	
+	label {
+	  font-size: 0.75em;
+	}
+	
+  input + label {
+    font-size: 1em;
+  }
+  
+	.form__text {
+	  width: 100%;
+	}
+	
+  .btn {
+    width: 100%;
+  }
+  
+  .form__title {
+    margin: 0 0 1em;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  
+  .form__btns {
+    margin-top: 1em;
+  }
+}

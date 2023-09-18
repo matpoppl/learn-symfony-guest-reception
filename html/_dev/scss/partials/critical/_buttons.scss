@@ -1,0 +1,20 @@
+
+.btn {
+	padding: 0.75em 3em;
+	border: 1px outset;
+	box-sizing: border-box;
+}
+
+@each $name, $color in $colors {
+	.btn--#{$name} {
+    border-color: darken($color, 5%);
+		background: $color;
+		color: $white;
+	}
+}
+
+.btn-rst {
+	background: none;
+	border: 0;
+	padding: 0;
+}

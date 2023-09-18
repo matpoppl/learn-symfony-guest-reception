@@ -1,0 +1,15 @@
+{% extends 'auth/layout.html.twig' %}
+{% form_theme form 'auth/themes/form.html.twig' %}
+
+{% block layout %}
+
+{{ form_start(form, {'attr': {'class': 'form form--signin'}}) }}
+
+    {% if error %}
+        <div class="messages messages--error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    
+    {{ form_widget(form) }}
+{{ form_end(form) }}
+
+{% endblock %}

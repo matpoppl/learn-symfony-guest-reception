@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping
+    xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity repository-class="App\Repository\GuestRepository"
+        name="App\Entity\Guest" table="guests">
+
+        <id name="id" type="integer">
+            <generator strategy="IDENTITY" />
+        </id>
+
+        <indexes>
+            <index columns="first_name,last_name,company_name,email" flags="fulltext" />
+        </indexes>
+
+        <field name="firstName" type="string" length="100" nullable="false" />
+        <field name="lastName" type="string" length="200" nullable="false" />
+        <field name="companyName" type="string" length="200" nullable="true" />
+        <field name="email" type="string" length="255" nullable="true" />
+
+        <field name="paymentStatus" type="smallint" />
+        <field name="arrived" type="boolean" />
+        <field name="receivedPkg" type="smallint" />
+        <field name="receivedCert" type="smallint" />
+        <field name="notes" type="text" length="65000" nullable="true" />
+
+    </entity>
+</doctrine-mapping>

@@ -1,0 +1,29 @@
+
+.table-models {
+	
+	thead {
+	  th, td {
+	    background: #333;
+	    color: #ddd;
+	  }
+	}
+	
+	a {
+	 text-decoration: none;
+	}
+	
+	tbody {
+	  tr {
+	    &:nth-child(even) {
+	      th, td {
+	        background: mix($grey-lighter, $white, 40%);
+	      }
+	    }
+      &:hover {
+        th, td {
+          background: mix($color-primary, $white, 15%);
+        }
+      }
+	  }
+	}
+}

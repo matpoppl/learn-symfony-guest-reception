@@ -1,0 +1,37 @@
+
+.form--edit {
+	
+	background: $grey-lighter;
+	
+	padding: 1em;
+	
+	.form__elem {
+	  display: flex;
+	  flex-wrap: wrap;
+	  
+	  > label {
+	    width: 12em;
+	    text-align: right;
+	    padding: 0.75em 1em 0 0;
+	  }
+	}
+	
+	.form-text,
+	.form-select {
+	  min-width: 24em;
+	}
+	
+  textarea.form-text {
+    min-height: 12em;
+    resize: vertical;
+  }
+  
+	.form__btns {
+	  margin-left: 13em;
+	}
+	
+	.messages {
+	  width: 100%;
+	  margin: 0 0 1em 13em;
+	}
+}

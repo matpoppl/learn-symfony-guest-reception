@@ -1,0 +1,40 @@
+{% block form_row %}
+<div class="form__elem{% if errors|length > 0 %} form__elem--error{% endif %}">
+    {% if 'checkbox' in block_prefixes %}
+        {{ form_widget(form, {'attr': {'class': 'form__checkbox'}}) }}
+        {{ form_label(form, null, {'label_attr': {'class': 'form__label form__label--checkbox'}}) }}
+    {% else %}
+	    {{ form_label(form, null, {'label_attr': {'class': 'form__label'}}) }}
+	    {{ form_widget(form, {'attr': {'class': 'form__text'}}) }}
+    {% endif %}
+    
+    {{ form_help(form) }}
+    {{ form_errors(form) }}
+</div>
+{% endblock form_row %}
+
+{% block submit_row %}
+<div class="form__btns">
+    {{ form_widget(form, {'attr': {'class': 'btn btn--primary'}}) }}
+</div>
+{% endblock submit_row %}
+
+{% block form_help %}
+	{% if help %}
+	    <span class="form__help">{{ help|trans|raw }}</span>
+	{% endif %}
+{% endblock form_help %}
+
+{% block form_errors %}
+    {% if errors|length > 0 %}
+        <ul class="messages messages--error">
+        {% if compound %}
+			{% for error in errors %}
+			    <li>{{ error.message }}</li>
+			{% endfor %}
+        {% else %}
+            <li>{{ errors }}</li>
+        {% endif %}
+        </ul>
+    {% endif %}
+{% endblock form_errors %}

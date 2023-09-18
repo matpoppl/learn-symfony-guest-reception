@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="symfony">
+
+    <target name="db-create" depends="db-drop,entity-regenerate,db-create-db,db-create-schema" />
+
+    <target name="db-create-db">
+        <exec executable="php">
+            <arg path="html/app/bin/console"/>
+            <arg value="doctrine:database:create"/>
+        </exec>
+    </target>
+
+    <target name="db-create-schema">
+        <exec executable="php">
+            <arg path="html/app/bin/console"/>
+            <arg value="doctrine:schema:create"/>
+        </exec>
+    </target>
+
+    <target name="db-drop">
+        <exec executable="php">
+            <arg path="html/app/bin/console"/>
+            <arg value="doctrine:database:drop"/>
+            <arg value="--force"/>
+        </exec>
+    </target>
+
+    <target name="entity-regenerate">
+        <exec executable="php">
+            <arg path="html/app/bin/console"/>
+            <arg value="make:entity"/>
+            <arg value="--regenerate"/>
+            <arg value="App\Entity"/>
+        </exec>
+    </target>
+
+    <target name="install-depends">
+        <exec executable="composer.cmd">
+            <arg value="install"/>
+            <arg value="-d"/>
+            <arg path="html/app"/>
+        </exec>
+    </target>
+
+</project>
+
